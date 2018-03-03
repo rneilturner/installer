@@ -15,5 +15,6 @@ touch /tmp/preinstall.touch
 <license-key>you-can-call-me-al</license-key>
 <postinstall>#!/bin/ash
 touch /tmp/postinstall.touch
+chroot /mnt/part2/dom0 sh -c "/sbin/setfiles /etc/selinux/xc_policy/contexts/files/file_contexts /config" 1>&2
 </postinstall>
 <allow-dev-repo-cert>true</allow-dev-repo-cert>

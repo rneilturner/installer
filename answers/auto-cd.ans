@@ -7,3 +7,6 @@
 <license-key></license-key>
 <skipready></skipready>
 <allow-dev-repo-cert>true</allow-dev-repo-cert>
+<postinstall>
+chroot /mnt/part2/dom0 sh -c "/sbin/setfiles /etc/selinux/xc_policy/contexts/files/file_contexts /config" 1>&2
+</postinstall>
